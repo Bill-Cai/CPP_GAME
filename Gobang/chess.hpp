@@ -2,7 +2,9 @@
 #define CHESS_HPP
 
 #include <iostream>
+#include <vector>
 
+#define CLI_PRINT 1
 const int CHESSBOARD_SCALE = 13;
 const int BLACK_CHESS = 1;
 const int WHITE_CHESS = -1;
@@ -25,6 +27,18 @@ public:
             }
         }
     }
+    std::vector<std::vector<int>> getMat()
+    {
+        std::vector<std::vector<int>> m(CHESSBOARD_SCALE, std::vector<int>(CHESSBOARD_SCALE));
+        for (int i = 0; i < CHESSBOARD_SCALE; i++)
+        {
+            for (int j = 0; j < CHESSBOARD_SCALE; j++)
+            {
+                m[i][j] = mat[i][j];
+            }
+        }
+        return m;
+    }
     float getBlockSize()
     {
         return blockSize;
@@ -38,17 +52,21 @@ public:
                 switch (mat[i][j])
                 {
                 case BLACK_CHESS:
-                    std::cout << "x ";
+                    if (CLI_PRINT)
+                        std::cout << "x ";
                     break;
                 case WHITE_CHESS:
-                    std::cout << "o ";
+                    if (CLI_PRINT)
+                        std::cout << "o ";
                     break;
                 default:
-                    std::cout << ". ";
+                    if (CLI_PRINT)
+                        std::cout << ". ";
                     break;
                 }
             }
-            std::cout << std::endl;
+            if (CLI_PRINT)
+                std::cout << std::endl;
         }
     }
     void drawChessboard()
@@ -57,7 +75,7 @@ public:
         setbkcolor(LIGHTGRAY);
         cleardevice();
         setlinecolor(BLACK);
-        for (int i = 0; i < 14; i++)
+        for (int i = 0; i <= CHESSBOARD_SCALE; i++)
         {
             line(blockSize, blockSize * (i + 1), blockSize * 13, blockSize * (i + 1));
             line(blockSize * (i + 1), blockSize, blockSize * (i + 1), blockSize * 13);
@@ -88,7 +106,8 @@ public:
                     break;
                 }
             }
-            std::cout << std::endl;
+            if (CLI_PRINT)
+                std::cout << std::endl;
         }
     }
     void move(int mx, int my)
@@ -131,7 +150,8 @@ public:
                     continue;
                 if ((i + 4 < CHESSBOARD_SCALE && mat[i][j] == mat[i + 1][j] && mat[i][j] == mat[i + 2][j] && mat[i][j] == mat[i + 3][j] && mat[i][j] == mat[i + 4][j]) || (j + 4 < CHESSBOARD_SCALE && mat[i][j] == mat[i][j + 1] && mat[i][j] == mat[i][j + 2] && mat[i][j] == mat[i][j + 3] && mat[i][j] == mat[i][j + 4]) || (i + 4 < CHESSBOARD_SCALE && j + 4 < CHESSBOARD_SCALE && mat[i][j] == mat[i + 1][j + 1] && mat[i][j] == mat[i + 2][j + 2] && mat[i][j] == mat[i + 3][j + 3] && mat[i][j] == mat[i + 4][j + 4]) || (i + 4 < CHESSBOARD_SCALE && j - 4 >= 0 && mat[i][j] == mat[i + 1][j - 1] && mat[i][j] == mat[i + 2][j - 2] && mat[i][j] == mat[i + 3][j - 3] && mat[i][j] == mat[i + 4][j - 4]))
                 {
-                    std::cout << "Player " << mat[i][j] << " wins!" << std::endl;
+                    if (CLI_PRINT)
+                        std::cout << "Player " << mat[i][j] << " wins!" << std::endl;
                     if (mat[i][j] == 1)
                     {
                         TCHAR s[] = _T("Black player wins!");
@@ -157,7 +177,8 @@ public:
                     return false;
             }
         }
-        std::cout << "Draw!" << std::endl;
+        if (CLI_PRINT)
+            std::cout << "Draw!" << std::endl;
         TCHAR s[] = _T("Draw!");
         settextcolor(RED);
         outtextxy(5, 5, s);
