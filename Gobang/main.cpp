@@ -39,7 +39,6 @@ int main()
         {
             std::vector<int> ai_mov_xy = ai.move(chess.getMat(), playerFlag);
             chess.move(ai_mov_xy[0], ai_mov_xy[1]);
-            break;
         }
     }
     _getch();

@@ -32,7 +32,6 @@ public:
                 {
                     move_xy.push_back(i);
                     move_xy.push_back(j);
-                    return move_xy;
                     for (int k = 0; k < 5; k++)
                     {
                         // (i,j-k) ~ (i,j+4-k)

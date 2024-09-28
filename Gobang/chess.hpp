@@ -96,11 +96,11 @@ public:
                 {
                 case BLACK_CHESS:
                     setfillcolor(BLACK);
-                    fillcircle(blockSize * i, blockSize * j, blockSize / 2.3);
+                    fillcircle(blockSize * (i + 1), blockSize * (j + 1), blockSize / 2.3);
                     break;
                 case WHITE_CHESS:
                     setfillcolor(WHITE);
-                    fillcircle(blockSize * i, blockSize * j, blockSize / 2.3);
+                    fillcircle(blockSize * (i + 1), blockSize * (j + 1), blockSize / 2.3);
                     break;
                 default:
                     break;
@@ -128,11 +128,11 @@ public:
         int k = x / blockSize;
         if (x > (k + 0.5) * blockSize)
         {
-            return k + 1;
+            return k;
         }
         else
         {
-            return k;
+            return k - 1;
         }
     }
     int getPlayerFlag()
