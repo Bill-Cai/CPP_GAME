@@ -17,7 +17,7 @@
 
 ![EasyX.exe下载](./img/EasyX.exe下载.png)
 
-下载得到的是一个 `.exe` 文件，根据 [EasyX 文档 - 安装](https://docs.easyx.cn/zh-cn/setup) 的手动安装方法所述，将 `.exe` 文件后缀直接改为 `.7z`，即可解压得到安装包的原始文件。文件结构如：
+下载得到的是一个 `.exe` 文件，根据 [EasyX 文档 - 安装](https://docs.easyx.cn/zh-cn/setup) 的手动安装方法所述，将 `.exe` 文件后缀直接改为 `.7z`，即可解压得到安装包的原始文件。文件结构如下：
 
 ```
 EasyX 安装程序

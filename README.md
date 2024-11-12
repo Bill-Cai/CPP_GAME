@@ -4,6 +4,25 @@
 
 在实现思路上参考了：[happysnaker/Gobang: 大一课设，一款AI五子棋项目，C++新手项目实践 — 智能人机五子棋对战。](https://github.com/happysnaker/Gobang)
 
+但比该项目更加简洁，便于初学者学习。
+
+## 项目运行
+
+推荐使用 VSCode 作为项目的编程环境：
+
+1. 参考 [EnvSetup.md](./docs/EnvSetup.md) 完成 VSCode 中 Cpp + EasyX 环境的配置。
+2. 打开 `main.cpp` 文件，直接运行生成 `main.cpp` 文件，即可运行该项目。
+
+如果您喜欢使用命令行编译，则可以（以 Windows 系统为例）：
+
+```bash
+cd Gobang
+# 直接使用 g++ 编译
+g++ main.cpp -o main.exe -leasyx
+# 运行程序
+main.exe
+```
+
 ## 代码解析
 
 核心代码主要包含三个类：
