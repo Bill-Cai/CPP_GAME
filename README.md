@@ -11,7 +11,7 @@
 推荐使用 VSCode 作为项目的编程环境：
 
 1. 参考 [EnvSetup.md](./docs/EnvSetup.md) 完成 VSCode 中 Cpp + EasyX 环境的配置。
-2. 打开 `main.cpp` 文件，直接运行生成 `main.cpp` 文件，即可运行该项目。
+2. 打开 `main.cpp` 文件，直接运行生成 `main.exe` 文件，即可运行该项目。
 
 如果您喜欢使用命令行编译，则可以（以 Windows 系统为例）：
 
